@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BitBank
 {
-    class Titulares
+    public class Titulares
     {
         public string Titular()
 
@@ -31,7 +31,9 @@ namespace BitBank
             double saldo = double.Parse(Console.ReadLine());*/
 
             return nomeTitular + numAgencia + numConta;
-        }// Titular
+
+        }//Titular
 
     }
+
 }
