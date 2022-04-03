@@ -1,50 +1,55 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-using System;
-
-public class ContaCorrente
+namespace BitBank
 {
-    public string titular;
-    public int agencia;
-    public int numero;
-    public double saldo = 1000;
 
-    public bool Sacar(double valor)
+    public class ContaCorrente
     {
-        if (this.saldo < valor)
+        public string titular;
+        public int agencia;
+        public int numero;
+        public double saldo = 1000;
+
+        public bool Sacar(double valor)
         {
-            return false;
-        }
-        else
+            if (this.saldo < valor)
+            {
+                return false;
+            }
+            else
+            {
+                this.saldo -= valor;
+                return true;
+            }
+
+        }//Saque
+
+        public void Deposito(double valor)
         {
-            this.saldo -= valor;
-            return true;
+            this.saldo += valor;
+        }//Deposito
+
+        public bool Transferir(double valor, ContaCorrente contaDestino)
+        {
+            if (this.saldo < valor)
+            {
+                return false;
+            }
+            else
+            {
+                this.saldo -= valor;
+                contaDestino.Deposito(valor);
+                return true;
+            }
         }
 
-    }//Saque
 
-    public void Deposito(double valor)
-    {
-        this.saldo += valor;
-    }//Deposito
 
-    public bool Transferir(double valor, ContaCorrente contaDestino)
-    {
-        if (this.saldo < valor)
-        {
-            return false;
-        }
-        else
-        {
-            this.saldo -= valor;
-            contaDestino.Deposito(valor);
-            return true;
-        }
+
     }
 
-    
-
-
 }
-

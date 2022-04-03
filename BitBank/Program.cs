@@ -46,9 +46,9 @@ namespace BitBank
 
             Console.WriteLine("Saldo Atual Contas: ");
             Console.WriteLine("Conta: " + contas[0].saldo + " Conta: " + contas[1].saldo);
-            
+
             Console.WriteLine("Obrigado BitBank agradece. Volte Sempre!");
-             
+
 
         }
     }
