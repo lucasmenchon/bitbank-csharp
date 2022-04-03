@@ -21,7 +21,29 @@ public class ContaCorrente
             this.saldo -= valor;
             return true;
         }
+
+    }//Saque
+
+    public void Deposito(double valor)
+    {
+        this.saldo += valor;
+    }//Deposito
+
+    public bool Transferir(double valor, ContaCorrente contaDestino)
+    {
+        if (this.saldo < valor)
+        {
+            return false;
+        }
+        else
+        {
+            this.saldo -= valor;
+            contaDestino.Deposito(valor);
+            return true;
+        }
     }
+
+    
 
 
 }
