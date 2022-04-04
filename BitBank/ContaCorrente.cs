@@ -9,11 +9,12 @@ namespace BitBank
 
     public class ContaCorrente
     {
-        public string titular;
+        public BitBank.Cliente titular;
         public int agencia;
         public int numero;
         public double saldo = 1000;
 
+        //Saque
         public bool Sacar(double valor)
         {
             if (this.saldo < valor)
@@ -26,13 +27,15 @@ namespace BitBank
                 return true;
             }
 
-        }//Saque
+        }
 
+        //Deposito
         public void Deposito(double valor)
         {
             this.saldo += valor;
-        }//Deposito
+        }
 
+        //Transferencia
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
             if (this.saldo < valor)

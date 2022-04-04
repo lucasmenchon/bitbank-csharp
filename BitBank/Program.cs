@@ -16,12 +16,15 @@ namespace BitBank
             string btitular = Titulares.Titular();*/
 
 
-            ContaCorrente[] contas = new ContaCorrente[2];
-            contas[0] = new ContaCorrente();
-            contas[1] = new ContaCorrente();
+            ContaCorrente[] contas = new ContaCorrente[1];
+            Cliente[] cliente = new Cliente[1];
+
+            Console.WriteLine("Nome cliente: ");
+            cliente[0].nome = Console.ReadLine();
+            cliente[0].cpf = Console.ReadLine();
 
             Console.WriteLine("Titular: ");
-            contas[0].titular = Console.ReadLine();
+            cliente[0].nome = Console.ReadLine();
             Console.WriteLine("Agência: ");
             contas[0].agencia = int.Parse(Console.ReadLine());
             Console.WriteLine("Número da Conta: ");
@@ -41,11 +44,11 @@ namespace BitBank
             contas[0].Deposito(double.Parse(Console.ReadLine()));
 
             Console.WriteLine("Insira algum valor para transferir, zero (0) caso não queira: ");
-            bool transferencia = contas[0].Transferir(double.Parse(Console.ReadLine()), contas[1]);
+            bool transferencia = contas[0].Transferir(double.Parse(Console.ReadLine()), contas[0]);
             Console.WriteLine(transferencia);
 
             Console.WriteLine("Saldo Atual Contas: ");
-            Console.WriteLine("Conta: " + contas[0].saldo + " Conta: " + contas[1].saldo);
+            Console.WriteLine("Conta: " + contas[0].saldo + " Conta: " + contas[0].saldo);
 
             Console.WriteLine("Obrigado BitBank agradece. Volte Sempre!");
 

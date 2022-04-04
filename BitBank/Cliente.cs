@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BitBank
 {
-    internal class Cliente
+    public class Cliente
     {
+
+        public string nome;
+        public string cpf;
+
     }
 }
