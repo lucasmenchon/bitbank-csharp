@@ -9,7 +9,7 @@ namespace BitBank
 
     public class ContaCorrente
     {
-        public BitBank.Cliente titular;
+        public  BitBank.Cliente titular;
         public int agencia;
         public int numero;
         public double saldo = 1000;
@@ -19,6 +19,7 @@ namespace BitBank
         {
             if (this.saldo < valor)
             {
+                this.saldo += valor;
                 return false;
             }
             else
@@ -26,7 +27,7 @@ namespace BitBank
                 this.saldo -= valor;
                 return true;
             }
-
+            
         }
 
         //Deposito
