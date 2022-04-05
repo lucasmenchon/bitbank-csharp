@@ -9,7 +9,7 @@ namespace BitBank
 
     public class ContaCorrente
     {
-        public  BitBank.Cliente titular;
+        public Cliente titular;
         public int agencia;
         public int numero;
         public double saldo = 1000;
