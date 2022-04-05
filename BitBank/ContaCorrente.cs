@@ -12,7 +12,7 @@ namespace BitBank
         public Cliente titular;
         public int agencia;
         public int numero;
-        public double saldo = 1000;
+        private double saldo = 1000;
 
         //Saque
         public bool Sacar(double valor)
@@ -27,7 +27,7 @@ namespace BitBank
                 this.saldo -= valor;
                 return true;
             }
-            
+
         }
 
         //Deposito
@@ -50,6 +50,32 @@ namespace BitBank
                 return true;
             }
         }
+
+        //Metodo ver Saldo
+        public double ObterSaldo()
+        {
+            return saldo;
+
+        }
+
+        //Metodo definir saldo e retirar valores negativos
+        public void DefinirSaldo(double saldo)
+        {
+            if (saldo < 0)
+            {
+
+                return;
+            }
+            else
+            {
+
+                this.saldo = saldo;
+            }
+
+
+
+        }
+
 
 
 

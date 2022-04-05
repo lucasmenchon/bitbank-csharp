@@ -33,7 +33,7 @@ namespace BitBank
             Console.WriteLine("Titular: " + cliente[0].nome);
             Console.WriteLine("Agência: " + contas[0].agencia);
             Console.WriteLine("Número da Conta: " + contas[0].numero);
-            Console.WriteLine("Saldo: " + contas[0].saldo);
+            Console.WriteLine("Saldo: " + contas[0].ObterSaldo());
 
 
             Console.WriteLine("Insira algum valor para saque, zero (0) caso não queira: ");
@@ -51,7 +51,7 @@ namespace BitBank
 
 
             Console.WriteLine("Saldo Atual Contas: ");
-            Console.WriteLine("Conta: " + contas[0].saldo + " Conta: " + contas[1].saldo);
+            Console.WriteLine("Conta: " + contas[0].ObterSaldo() + " Conta: " + contas[1].ObterSaldo());
 
 
             Console.WriteLine("Obrigado BitBank agradece. Volte Sempre!");
