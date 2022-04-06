@@ -9,11 +9,14 @@ namespace BitBank
 
     public class ContaCorrente
     {
-        public Cliente titular;
+
+        public Cliente Titular { get; set; }
+
         public int agencia;
         public int numero;
         private double _saldo = 10;
 
+        //
         public double Saldo
         {
             get
@@ -36,7 +39,7 @@ namespace BitBank
         //Saque
         public bool Sacar(double valor)
         {
-            if (this._saldo < valor)
+            if (this._saldo < valor | this._saldo < 0)
             {
                 this._saldo += valor;
                 return false;
@@ -59,7 +62,7 @@ namespace BitBank
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
 
-            if (this._saldo < valor)
+            if (this._saldo < valor | this._saldo < 0) //(this._saldo < valor | this._saldo  <= 0)
             {
                 return false;
             }
@@ -71,6 +74,7 @@ namespace BitBank
 
             }
 
+                        
         }
 
         //Metodo ver Saldo - codigo aprimorado > Saldo/get/set

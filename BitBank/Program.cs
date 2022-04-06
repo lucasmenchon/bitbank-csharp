@@ -10,29 +10,28 @@ namespace BitBank
             ContaCorrente[] contas = new ContaCorrente[2];
             Cliente[] cliente = new Cliente[1];
 
-
-            cliente[0] = new Cliente();
             contas[0] = new ContaCorrente();
             contas[1] = new ContaCorrente();
-            contas[0].Saldo = 10;
 
+            cliente[0] = new Cliente();
+
+            contas[0].Saldo = 10;
+            contas[0].Titular = cliente[0]; // juncao de classes c/c com cliente
 
             Console.WriteLine("Nome cliente: ");
-            cliente[0].nome = Console.ReadLine();
+            contas[0].Titular.nome = Console.ReadLine();
             Console.WriteLine("Cpf cliente: ");
-            cliente[0].cpf = Console.ReadLine();
-            Console.WriteLine("Saldo: " + contas[0].Saldo);
+            contas[0].Titular.cpf = Console.ReadLine();
 
             Console.WriteLine("Titular: ");
-            Console.WriteLine(cliente[0].nome);
+            Console.WriteLine(contas[0].Titular.nome);
             Console.WriteLine("Agência: ");
             contas[0].agencia = int.Parse(Console.ReadLine());
             Console.WriteLine("Número da Conta: ");
             contas[0].numero = int.Parse(Console.ReadLine());
 
 
-
-            Console.WriteLine("Titular: " + cliente[0].nome);
+            Console.WriteLine("Titular: " + contas[0].Titular.nome);
             Console.WriteLine("Agência: " + contas[0].agencia);
             Console.WriteLine("Número da Conta: " + contas[0].numero);
             Console.WriteLine("Saldo: " + contas[0].Saldo);
