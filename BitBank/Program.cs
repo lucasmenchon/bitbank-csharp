@@ -14,13 +14,14 @@ namespace BitBank
             cliente[0] = new Cliente();
             contas[0] = new ContaCorrente();
             contas[1] = new ContaCorrente();
+            contas[0].Saldo = 10;
 
 
             Console.WriteLine("Nome cliente: ");
             cliente[0].nome = Console.ReadLine();
             Console.WriteLine("Cpf cliente: ");
             cliente[0].cpf = Console.ReadLine();
-
+            Console.WriteLine("Saldo: " + contas[0].Saldo);
 
             Console.WriteLine("Titular: ");
             Console.WriteLine(cliente[0].nome);
@@ -30,10 +31,11 @@ namespace BitBank
             contas[0].numero = int.Parse(Console.ReadLine());
 
 
+
             Console.WriteLine("Titular: " + cliente[0].nome);
             Console.WriteLine("Agência: " + contas[0].agencia);
             Console.WriteLine("Número da Conta: " + contas[0].numero);
-            Console.WriteLine("Saldo: " + contas[0].ObterSaldo());
+            Console.WriteLine("Saldo: " + contas[0].Saldo);
 
 
             Console.WriteLine("Insira algum valor para saque, zero (0) caso não queira: ");
@@ -51,7 +53,7 @@ namespace BitBank
 
 
             Console.WriteLine("Saldo Atual Contas: ");
-            Console.WriteLine("Conta: " + contas[0].ObterSaldo() + " Conta: " + contas[1].ObterSaldo());
+            Console.WriteLine("Conta: " + contas[0].Saldo + " Conta: " + contas[1].Saldo);
 
 
             Console.WriteLine("Obrigado BitBank agradece. Volte Sempre!");

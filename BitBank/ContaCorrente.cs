@@ -12,19 +12,38 @@ namespace BitBank
         public Cliente titular;
         public int agencia;
         public int numero;
-        private double saldo = 1000;
+        private double _saldo = 10;
+
+        public double Saldo
+        {
+            get
+            {
+                return _saldo;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+
+                _saldo = value;
+            }
+        }
+
 
         //Saque
         public bool Sacar(double valor)
         {
-            if (this.saldo < valor)
+            if (this._saldo < valor)
             {
-                this.saldo += valor;
+                this._saldo += valor;
                 return false;
             }
             else
             {
-                this.saldo -= valor;
+                this._saldo -= valor;
                 return true;
             }
 
@@ -33,33 +52,36 @@ namespace BitBank
         //Deposito
         public void Deposito(double valor)
         {
-            this.saldo += valor;
+            this._saldo += valor;
         }
 
         //Transferencia
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (this.saldo < valor)
+
+            if (this._saldo < valor)
             {
                 return false;
             }
             else
             {
-                this.saldo -= valor;
+                this._saldo -= valor;
                 contaDestino.Deposito(valor);
                 return true;
+
             }
+
         }
 
-        //Metodo ver Saldo
-        public double ObterSaldo()
+        //Metodo ver Saldo - codigo aprimorado > Saldo/get/set
+        /*public double ObterSaldo()
         {
             return saldo;
 
-        }
+        }*/
 
-        //Metodo definir saldo e retirar valores negativos
-        public void DefinirSaldo(double saldo)
+        //Metodo definir saldo e retirar valores negativos - codigo aprimorado > Saldo/get/set
+        /*public void DefinirSaldo(double saldo)
         {
             if (saldo < 0)
             {
@@ -74,7 +96,7 @@ namespace BitBank
 
 
 
-        }
+        }*/
 
 
 
