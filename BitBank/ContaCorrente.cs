@@ -9,7 +9,7 @@ namespace BitBank
 
     public class ContaCorrente
     {
-
+        //
         public Cliente Titular { get; set; }
 
         public int agencia;
