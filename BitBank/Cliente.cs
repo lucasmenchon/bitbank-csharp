@@ -9,8 +9,9 @@ namespace BitBank
     public class Cliente
     {
 
-        public string nome;
-        public string cpf;
+        public string Nome { get; set; }
+
+        public string CPF { get; set; }
 
     }
 }

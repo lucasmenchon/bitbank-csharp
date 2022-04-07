@@ -19,21 +19,21 @@ namespace BitBank
             contas[0].Titular = cliente[0]; // juncao de classes c/c com cliente
 
             Console.WriteLine("Nome cliente: ");
-            contas[0].Titular.nome = Console.ReadLine();
+            contas[0].Titular.Nome = Console.ReadLine();
             Console.WriteLine("Cpf cliente: ");
-            contas[0].Titular.cpf = Console.ReadLine();
+            contas[0].Titular.CPF = Console.ReadLine();
 
             Console.WriteLine("Titular: ");
-            Console.WriteLine(contas[0].Titular.nome);
+            Console.WriteLine(contas[0].Titular.Nome);
             Console.WriteLine("Agência: ");
-            contas[0].agencia = int.Parse(Console.ReadLine());
+            contas[0].Agencia = int.Parse(Console.ReadLine());
             Console.WriteLine("Número da Conta: ");
-            contas[0].numero = int.Parse(Console.ReadLine());
+            contas[0].Numero = int.Parse(Console.ReadLine());
 
 
-            Console.WriteLine("Titular: " + contas[0].Titular.nome);
-            Console.WriteLine("Agência: " + contas[0].agencia);
-            Console.WriteLine("Número da Conta: " + contas[0].numero);
+            Console.WriteLine("Titular: " + contas[0].Titular.Nome);
+            Console.WriteLine("Agência: " + contas[0].Agencia);
+            Console.WriteLine("Número da Conta: " + contas[0].Numero);
             Console.WriteLine("Saldo: " + contas[0].Saldo);
 
 
