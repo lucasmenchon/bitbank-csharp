@@ -9,15 +9,46 @@ namespace BitBank
 
     public class ContaCorrente
     {
-        //
+        
         public Cliente Titular { get; set; }
 
-        public int Agencia { get; set; }
+        //caracteristica / propriedade estatica.
+        public static int ContasCriadas { get; private set; }
+
+        private int _agencia;
+
+        public int Agencia
+        {
+            get
+            {
+                return _agencia;
+
+            }
+
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+
+                _agencia = value;
+            }
+        }
+
         public int Numero { get; set; }
 
         private double _saldo = 10;
 
-        //
+        //Construtor
+        public ContaCorrente(int agencia, int numero)
+        {
+            Agencia = agencia;
+            Numero = numero;
+
+            ContasCriadas++;
+        }
+
         public double Saldo
         {
             get
@@ -32,12 +63,30 @@ namespace BitBank
                     return;
                 }
 
-                _saldo = value;
+                 _saldo = value;
             }
         }
 
+        //Sacar2 Construtor
+        public bool Saque
+        {
 
-        //Saque
+            get
+            {
+                return (_saldo > 0);
+            }
+            set
+            {
+                if (_saldo < 0)
+                {
+                    _saldo = 0;
+                }
+            }
+
+        }
+
+
+        //Saque / Metodo
         public bool Sacar(double valor)
         {
             if (this._saldo < valor | this._saldo < 0)
@@ -75,7 +124,7 @@ namespace BitBank
 
             }
 
-                        
+
         }
 
         //Metodo ver Saldo - codigo aprimorado > Saldo/get/set
