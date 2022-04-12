@@ -17,6 +17,7 @@ namespace BitBank
 
             contas[0].Saldo = 10;
             contas[0].Titular = cliente[0]; // juncao de classes c/c com cliente
+            //contas[0].Saque = bool.Parse(Console.ReadLine());
 
             Console.WriteLine("Nome cliente: ");
             contas[0].Titular.Nome = Console.ReadLine();
@@ -47,6 +48,7 @@ namespace BitBank
 
 
             Console.WriteLine("Insira algum valor para transferir, zero (0) caso não queira: ");
+           // bool transferencia = contas[0].Transferir(double.Parse(Console.ReadLine()), contas[1]);
             bool transferencia = contas[0].Transferir(double.Parse(Console.ReadLine()), contas[1]);
             Console.WriteLine("Transferido para: " + contas[1]);
 
