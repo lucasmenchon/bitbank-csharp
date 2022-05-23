@@ -1,0 +1,1 @@
+BitBank é um pequeno projeto para treino em C#.
